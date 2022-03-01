@@ -1,0 +1,33 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30%;
+  }
+
+  .card {
+      padding: 25px;
+  }
+  
+  .progress {
+    background: #f9f9f9;
+    border-radius: 6px;
+  }
+  
+  .progress-bar { 
+    height: 18px;  
+    border-radius: 4px;   
+  }
+  
+  .progress-striped .progress-bar {   
+    background-color: #0074D9; 
+    width: 100%; 
+    animation: LoadingAnimation 10s;
+  }
+  
+  @keyframes LoadingAnimation {
+       from { width: 0 }
+       to   { width: 100% }
+  }

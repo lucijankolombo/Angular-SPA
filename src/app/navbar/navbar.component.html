@@ -1,0 +1,20 @@
+<nav>
+<div class="dropdown">
+  <i class="bi bi-list"></i>
+  <div class="dropdown-content">
+    <a class="nav-link" aria-current="page" routerLinkActive="active"
+    [routerLink]="['/users']">Users</a>
+    <a class="nav-link" aria-current="page" routerLinkActive="active"
+    [routerLink]="['/about']">About me</a>
+    <a class="nav-link" aria-current="page" routerLinkActive="active"
+    [routerLink]="['/admin']" *ngIf="username === dataService.admin.username">Admin only</a>
+  </div>
+  <span class="usermsg" *ngIf="!dataService.userLogout">{{ username }}</span>
+  <span class="usermsg" *ngIf="dataService.userLogout">Unknown User</span>
+</div>
+<span class="logout" *ngIf="!dataService.userLogout">
+<button type="button" class="logout-btn" (click)="userLogout()">
+  <i class="bi bi-box-arrow-right" style="float: right"></i>
+</button>
+</span>
+</nav>

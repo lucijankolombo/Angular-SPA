@@ -1,0 +1,25 @@
+<pm-navbar [username]="dataService.userSelected"></pm-navbar>
+
+<pm-loading-bar *ngIf="isLoading === false"></pm-loading-bar>
+
+<div class="container" *ngIf="isLoading === true">  
+    <h2>Users</h2>      
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Sign in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td><button type="button" class="btn btn-primary" (click)="getOneUser(user)" [disabled]="!dataService.userLogout">Select</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

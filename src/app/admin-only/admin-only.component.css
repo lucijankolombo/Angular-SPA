@@ -1,0 +1,13 @@
+.card-deck {
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 30%;
+}
+
+.list {
+    padding: 12px;
+}

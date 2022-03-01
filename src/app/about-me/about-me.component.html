@@ -1,0 +1,33 @@
+<pm-navbar *ngIf="!dataService.userLogout" [username]="dataService.userSelected"></pm-navbar>
+<pm-navbar *ngIf="dataService.userLogout">Unknown User</pm-navbar>
+
+<div class="card-deck" *ngIf="dataService.userLogout">
+  <div class="card">
+    <h2 class="card-text">
+      <div class="alert alert-danger" style="height: 100%">
+        <strong>Please sign in!</strong>
+      </div>
+    </h2>
+  </div>
+</div>
+
+  <div class="card-deck" *ngIf="!dataService.userLogout">
+    <div class="card bg-primary">
+      <div class="card-body text-center">
+        <h2 class="card-text">About me</h2>
+        <h3 class="card-text">Address</h3>
+        <p class="card-text">Street: {{ dataService.userSelectedData.address.street }}</p>
+        <p class="card-text">Suite: {{ dataService.userSelectedData.address.suite }}</p>
+        <p class="card-text">City: {{ dataService.userSelectedData.address.city }}</p>
+        <br>
+        <h3 class="card-text">Company</h3>
+        <p class="card-text">Name: {{ dataService.userSelectedData.company.name }} </p>
+        <p class="card-text">CatchPhrase: {{ dataService.userSelectedData.company.catchPhrase }}</p>
+        <br>
+        <p class="card-text">Email: {{ dataService.userSelectedData.email }}</p>
+        <p class="card-text">Name: {{ dataService.userSelectedData.name }}</p>
+        <p class="card-text">Phone: {{ dataService.userSelectedData.phone }}</p>
+        <p class="card-text">Username: {{ dataService.userSelectedData.username }}</p>
+        <p class="card-text">Website: {{ dataService.userSelectedData.website }}</p>
+      </div>
+    </div>

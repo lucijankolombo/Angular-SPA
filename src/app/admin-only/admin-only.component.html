@@ -1,0 +1,13 @@
+<pm-navbar *ngIf="!dataService.userLogout" [username]="dataService.userSelected"></pm-navbar>
+<pm-navbar *ngIf="dataService.userLogout">Unknown User</pm-navbar>
+
+<div class="card-deck" *ngIf="dataService.admin.username === 'Samantha' && !dataService.userLogout">
+    <div class="card bg-primary">
+      <div class="card-body text-center">
+        <h2 class="card-text">List of secret tasks</h2>
+        <div class="list" *ngFor="let task of taskList">
+            <h3>Task title: {{ task.title }}</h3>
+            <h4>Task description: {{ task.description }}</h4>
+        </div>
+      </div>
+    </div>
